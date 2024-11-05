@@ -6,7 +6,7 @@ name text NOT NULL,
 address text NOT NULL,
 city text NOT NULL,
 state varchar(2),
-country text NOT NULL,
+country varchar(2) NOT NULL,
 visited varchar(1) NOT NULL, -- If the place has been visited or not
 date_visited date,
 notes text
@@ -29,8 +29,8 @@ CHECK (visited ILIKE 'n' OR (visited NOT ILIKE 'n' AND date_visited IS NOT NULL)
  name         | text                 |           | not null |
  address      | text                 |           | not null |
  city         | text                 |           | not null |
- state        | character varying(2) |           |          |
- country      | text                 |           | not null |
+ state        | character varying(2) |           | not null |
+ country      | character varying(2) |           | not null |
  visited      | character varying(1) |           | not null |
  date_visited | date                 |           |          |
  notes        | text                 |           |          |
@@ -39,3 +39,10 @@ Indexes:
 Check constraints:
     "date_visited_not_null_if_visited_yes" CHECK (visited::text ~~* 'n'::text OR visited::text !~~* 'n'::text AND date_visited IS NOT NULL)
 */
+
+-- Example Row Insert
+INSERT INTO places (name, address, city, state, country, visited, date_visited, notes)
+VALUES (
+'Roy de France', '701 S Miami Ave #335B', 'Miami', 'FL', 'US', 'Y', '2024-10-17', 'The Birthday Cake macaron ice cream was sweeter and less savory than expected. The price of $4.50 was fair, however, and I would return again. This is where R and I met.'
+);
+-- Should output 'INSERT 0 1'
