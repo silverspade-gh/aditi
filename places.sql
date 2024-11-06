@@ -1,3 +1,6 @@
+-- Origin of the database
+CREATE DATABASE aditi;
+
 -- This sequence of statements is the dump for the creation of the Places Visited database
 
 CREATE TABLE places (
