@@ -1,0 +1,8 @@
+# Transfer file using SCP over TCP Port 22 from local machine to Amazon Linux AMI remote machine (hereafter referred to as Nimbus, the name of the EC2 instance)
+# The first option, -i followed by its parameter authenticates the user's connection to Nimbus.
+# The next parameter is the file, then establishing a connection to the public DNS (IPv4 or IPv6) for access to the home directory of the instance as a default user.
+# Note the fictitious ip 123.45.67.89: The public DNS of the instance should be kept private for prevention of unauthorized access attempts.
+ scp -i "\path\to\pem\file\for\nimbus\connection.pem" "\local\path\to\file\to\be\transferred" ec2-user@ec2-123-45-67-89.compute-1.amazonaws.com:~/.
+
+# Log in to EC2 Instance
+ssh -i "\path\to\pem\file\for\nimbus\connection.pem" ec2-user@ec2-123-45-67-89.compute-1.amazonaws.com
