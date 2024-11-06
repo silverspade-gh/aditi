@@ -1,0 +1,16 @@
+The places table is a database table in database aditi describing the places R and I have visited or plan to visit over time.
+
+The file used to import entries is called places.csv and is located in this repository.
+
+The date_visited attribute is mandatory if the visited entry is a "Y" (or "y").
+
+Columns (in order of appearance):
+
+name - words that designate and describe the place
+address - the location of the place
+city - the municipality in which the place is located
+state - the province or territory of the political community governed
+country - the nation of the political community governed
+visited - a boolean describing whether the place has been experienced in person or not
+date_visited - the date visited (which is a mandatory entry if 'visited' is 'Y' (or 'y')
+notes - commentary on the place
