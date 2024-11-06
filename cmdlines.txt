@@ -4,5 +4,16 @@
 # Note the fictitious ip 123.45.67.89: The public DNS of the instance should be kept private for prevention of unauthorized access attempts.
 scp -i "\path\to\pem\file\for\nimbus\connection.pem" "\local\path\to\file\to\be\transferred" ec2-user@ec2-123-45-67-89.compute-1.amazonaws.com:~/.
 
+#! EC2
 # Log in to EC2 Instance
 ssh -i "\path\to\pem\file\for\nimbus\connection.pem" ec2-user@ec2-123-45-67-89.compute-1.amazonaws.com
+
+#! RDS
+
+# Install psql command-line interface on EC2 Instance
+sudo dnf install postgresql15
+
+# Log in to AWS RDS Instance under master username postgres connecting to database aditi
+# (The process will prompt for the master password)
+# Note the fictitious sub-domain name abcdefghi, replacing the real name to prevent unauthorized access attempts.
+psql --host=aditi.abcdefghi.us-east-1.rds.amazonaws.com --port=5432 --dbname=aditi --username=postgres
