@@ -17,3 +17,6 @@ sudo dnf install postgresql15
 # (The process will prompt for the master password)
 # Note the fictitious sub-domain name abcdefghi, replacing the real name to prevent unauthorized access attempts.
 psql --host=aditi.abcdefghi.us-east-1.rds.amazonaws.com --port=5432 --dbname=aditi --username=postgres
+
+# Copy into the table's columns from a file with options in psql
+\copy places (name, address, city, state, country, visited, date_visited, notes) FROM '/home/ec2-user/places.csv' WITH (FORMAT CSV, HEADER);
