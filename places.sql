@@ -46,6 +46,6 @@ Check constraints:
 -- Example Row Insert
 INSERT INTO places (name, address, city, state, country, visited, date_visited, notes)
 VALUES (
-'Roy de France', '701 S Miami Ave #335B', 'Miami', 'FL', 'US', 'Y', '2024-10-17', 'The Birthday Cake macaron ice cream was sweeter and less savory than expected. The price of $4.50 was fair, however, and I would return again. This is where R and I met.'
+'Curly''s Carribean', '1892 Abbey Rd', 'West Palm Beach', 'FL', 'US', 'Y', '2024-11-03', 'The service was OK and the prices were fair, but the food was plentiful and delicious. I would come here once a week if it were closer, but I will stop by if I am in the area.'
 );
--- Should output 'INSERT 0 1'
+-- Should output 'INSERT 0 1'. The 0 is an object identifier (OID), but returns zero because it's not used for rows. The 1 is the value signifying how many rows were imported.
