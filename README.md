@@ -17,3 +17,7 @@ Nimbus key-pair, silver is used for the RDS database instance.
 When adding rows, double-quotes aren't used around values because they are used for identifiers such as column names or table names (or any other name).
 
 They are used during CSV import when commas are present in the entry so PostgreSQL knows not to confuse it with a delimitation.
+
+Spaces can be used during a standard INSERT INTO statement because the values are enclosed around quotes. The spaces would not be entered as values.
+With a CSV or any other import, the entries are delimited by a value, default comma in CSV files (or tab in TEXT files).
+Any data between the delimiters represents an entry. Therefore, spaces cannot be used unless intended to be part of the entry.
