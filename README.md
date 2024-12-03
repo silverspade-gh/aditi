@@ -53,3 +53,23 @@ To log in to the AWS RDS instance within the EC2 instance, use the command
 found in the RDS page details under "Connectivity and Security" and the dbname1 is the configured database name.
 
  To terminate the connection, type "exit".
+
+---
+
+**Database Usage**
+
+`\dt` displays the tables. You can think of `dt` as an abbreviation for "display tables".
+
+A common procedure is to update the table at large. If a .csv file is the source of a database and it gets updated,
+you can drop the previous rows and copy the .csv file onto the database:
+
+`TRUNCATE TABLE tablename; -- outputs TRUNCATE TABLE indicating a successful completion of removal of all rows
+
+\copy places (name, address, city, state, country, visited, date_visited, notes) 
+FROM '/home/ec2-user/places.csv' 
+WITH (FORMAT CSV, HEADER); -- outputs COPY 35 in the case 35 rows are copied
+
+SELECT * FROM places; -- confirm the table outputs as expected
+`
+
+***DO NOT DROP THE TABLE.*** Doing so will require re-configuration of the type of columns and a re-creation of the table.
