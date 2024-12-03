@@ -21,3 +21,10 @@ They are used during CSV import when commas are present in the entry so PostgreS
 Spaces can be used during a standard INSERT INTO statement because the values are enclosed around quotes. The spaces would not be entered as values.
 With a CSV or any other import, the entries are delimited by a value, default comma in CSV files (or tab in TEXT files).
 Any data between the delimiters represents an entry. Therefore, spaces cannot be used unless intended to be part of the entry.
+
+---
+
+Log-in Instructions
+
+To log in to an AWS EC2 instance, use the command ssh -i my\path\to\my\pem\file.pem ec2-user@ec2-12-345-678-90.compute-1.amazonaws.com
+where my\path\to\my\pem\file.pem is the path to your .pem file and the IP 12-345-678-90 is the IP address of your instance.
