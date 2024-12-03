@@ -49,3 +49,7 @@ VALUES (
 'Curly''s Carribean', '1892 Abbey Rd', 'West Palm Beach', 'FL', 'US', 'Y', '2024-11-03', 'The service was OK and the prices were fair, but the food was plentiful and delicious. I would come here once a week if it were closer, but I will stop by if I am in the area.'
 );
 -- Should output 'INSERT 0 1'. The 0 is an object identifier (OID), but returns zero because it's not used for rows. The 1 is the value signifying how many rows were imported.
+
+-- Example row removal for all rows
+TRUNCATE TABLE places;
+-- Should output 'TRUNCATE TABLE' indicating all rows were removed but the table and its column types were kept.
