@@ -26,5 +26,5 @@ Any data between the delimiters represents an entry. Therefore, spaces cannot be
 
 Log-in Instructions
 
-To log in to an AWS EC2 instance, use the command ssh -i my\path\to\my\pem\file.pem ec2-user@ec2-12-345-678-90.compute-1.amazonaws.com
-where my\path\to\my\pem\file.pem is the path to your .pem file and the IP 12-345-678-90 is the IP address of your instance.
+To log in to an AWS EC2 instance, use the command `ssh -i my\path\to\my\pem\file.pem ec2-user@ec2-12-345-678-90.compute-1.amazonaws.com`
+where `my\path\to\my\pem\file.pem` is the path to your `.pem` file and the IP `12-345-678-90` is the IP address of your instance.
