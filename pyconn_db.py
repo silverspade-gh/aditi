@@ -2,7 +2,7 @@
 import psycopg2
 
 # Database Connection Credentials
-from db_creds.py import db_params
+from db_creds import db_params
 
 try:
     # Establish the connection
