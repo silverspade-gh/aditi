@@ -1,7 +1,7 @@
 -- Origin of the database
 CREATE DATABASE aditi;
 
--- This sequence of statements is the dump for the creation of the Places Visited database
+-- Create the places table describing places R and I visited (or plan to visit)
 
 CREATE TABLE places (
 id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -16,7 +16,6 @@ notes text
 );
 
 -- Add the constraint to enforce date_visited NOT NULL if visited is 'Y' or 'y'
-
 ALTER TABLE places
 ADD CONSTRAINT date_visited_not_null_if_visited_yes
 CHECK (visited ILIKE 'n' OR (visited NOT ILIKE 'n' AND date_visited IS NOT NULL));
@@ -49,6 +48,12 @@ VALUES (
 'Curly''s Carribean', '1892 Abbey Rd', 'West Palm Beach', 'FL', 'US', 'Y', '2024-11-03', 'The service was OK and the prices were fair, but the food was plentiful and delicious. I would come here once a week if it were closer, but I will stop by if I am in the area.'
 );
 -- Should output 'INSERT 0 1'. The 0 is an object identifier (OID), but returns zero because it's not used for rows. The 1 is the value signifying how many rows were imported.
+
+-- Example update of cell
+UPDATE places
+SET date_visited='2024-12-01'
+WHERE id=35; 
+-- outputs UPDATE 1
 
 -- Example row removal for all rows
 TRUNCATE TABLE places;
