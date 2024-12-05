@@ -49,7 +49,7 @@ found in the EC2 page details under "Instance Summary" (the main dashboard).
 **To the RDS**
 
 To log in to the AWS RDS instance within the EC2 instance, use the command 
-`psql --host=my.db.us-east-1.rds.amazonaws.com --port=5432 --dbname=dbname1 --username=postgres` where my.db is your database location
+`psql --host=my.db.us-east-1.rds.amazonaws.com --port=5432 --dbname=dbname1 --username=postgres` where `my.db` is your database location
 found in the RDS page details under "Connectivity and Security" and the dbname1 is the configured database name.
 
  To terminate the connection, type "exit".
